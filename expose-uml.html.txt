@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @media print { .page-break { page-break-before: always; } }
+    body { font-family: 'Times New Roman', Times, serif; font-size: 11pt; line-height: 1.5; max-width: 210mm; margin: 0 auto; padding: 15mm; color: #000; background: #fff; }
+    .cover-page { text-align: center; min-height: 90vh; display: flex; flex-direction: column; justify-content: space-between; padding: 30px 0; }
+    .cover-header { border: 3px double #1a365d; padding: 12px; margin-bottom: 20px; }
+    .university-name { font-size: 22pt; font-weight: bold; color: #1a365d; margin-bottom: 8px; }
+    .academic-year { font-size: 13pt; color: #333; }
+    .module-name { font-size: 13pt; font-style: italic; margin-top: 8px; color: #1a365d; }
+    .cover-middle { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+    .expose-label { font-size: 16pt; letter-spacing: 6px; margin-bottom: 25px; color: #666; }
+    .theme-box { border: 2px solid #1a365d; padding: 20px 30px; margin: 15px auto; max-width: 85%; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+    .theme-label { font-size: 11pt; color: #666; margin-bottom: 8px; }
+    .theme-title { font-size: 18pt; font-weight: bold; color: #1a365d; line-height: 1.3; }
+    .cover-footer { margin-top: 30px; }
+    .presenters { margin-bottom: 25px; }
+    .presenters-label, .supervisor-label { font-size: 11pt; font-weight: bold; margin-bottom: 8px; color: #1a365d; }
+    .presenter-name, .supervisor-name { font-size: 12pt; margin: 4px 0; }
+    h1 { font-size: 16pt; color: #1a365d; text-align: center; border-bottom: 2px solid #1a365d; padding-bottom: 8px; margin-top: 30px; margin-bottom: 20px; text-transform: uppercase; }
+    h2 { font-size: 13pt; color: #1a365d; margin-top: 20px; margin-bottom: 12px; }
+    h3 { font-size: 11pt; color: #333; margin-top: 15px; margin-bottom: 8px; font-style: italic; }
+    p { text-align: justify; margin-bottom: 10px; text-indent: 1.5em; }
+    p.no-indent { text-indent: 0; }
+    .sommaire { background: #f8f9fa; padding: 20px 30px; border-left: 4px solid #1a365d; margin: 25px 0; }
+    .sommaire-title { font-size: 14pt; font-weight: bold; color: #1a365d; margin-bottom: 15px; text-align: center; }
+    .sommaire-item { margin: 6px 0; font-size: 11pt; }
+    .sommaire-item.main { font-weight: bold; margin-top: 10px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10pt; }
+    th, td { border: 1px solid #333; padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #1a365d; color: white; font-weight: bold; }
+    tr:nth-child(even) { background: #f8f9fa; }
+    .scenario-table th { background: #2d5a87; }
+    .alt-scenario { background: #e8f4f8; padding: 12px; margin: 12px 0; border-left: 4px solid #3182ce; font-size: 10pt; }
+    .exc-scenario { background: #fef3f3; padding: 12px; margin: 12px 0; border-left: 4px solid #c53030; font-size: 10pt; }
+    .scenario-title { font-weight: bold; color: #1a365d; margin-bottom: 6px; }
+    .image-placeholder { border: 2px dashed #999; padding: 20px; margin: 15px 0; text-align: center; background: #f5f5f5; color: #666; font-style: italic; font-size: 10pt; }
+    .example-header { background: #1a365d; color: white; padding: 10px 15px; font-size: 13pt; font-weight: bold; margin-top: 25px; margin-bottom: 0; }
+    .example-subheader { background: #2d5a87; color: white; padding: 8px 15px; font-size: 11pt; margin-top: 0; margin-bottom: 15px; }
+    strong { color: #1a365d; }
+    ul, ol { margin: 12px 0; padding-left: 20px; }
+    li { margin: 6px 0; text-align: justify; }
+    .biblio-item { margin: 12px 0; padding-left: 2em; text-indent: -2em; font-size: 10pt; }
+  </style>
+</head>
+<body>
+
+<!-- PAGE DE GARDE -->
+<div class="cover-page">
+  <div class="cover-header">
+    <div class="university-name">PIGIER BÉNIN</div>
+    <div class="academic-year">Année universitaire : 2025-2026</div>
+    <div class="module-name">Module : Langage de Modélisation UML</div>
+  </div>
+  <div class="cover-middle">
+    <div class="expose-label">EXPOSÉ</div>
+    <div class="theme-box">
+      <div class="theme-label">Thème :</div>
+      <div class="theme-title">La Description Textuelle des Cas d'Utilisation</div>
+    </div>
+  </div>
+  <div class="cover-footer">
+    <div class="presenters">
+      <div class="presenters-label">Présenté par :</div>
+      <div class="presenter-name">DENON Césaire</div>
+      <div class="presenter-name">SEKE BOUKO Nazirou</div>
+    </div>
+    <div class="supervisor">
+      <div class="supervisor-label">Sous la supervision de :</div>
+      <div class="supervisor-name">M. AGBO Engelbert</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- SOMMAIRE -->
+<div class="sommaire">
+  <div class="sommaire-title">SOMMAIRE</div>
+  <div class="sommaire-item main">Introduction</div>
+  <div class="sommaire-item main">I. Définition et objectifs</div>
+  <div class="sommaire-item main">II. Structure d'une fiche de description</div>
+  <div class="sommaire-item main">III. Les scénarios</div>
+  <div class="sommaire-item main">IV. Exemples pratiques</div>
+  <div class="sommaire-item main">V. Bonnes pratiques et conseils</div>
+  <div class="sommaire-item main">Conclusion</div>
+  <div class="sommaire-item main">Bibliographie / Webographie</div>
+</div>
+
+<!-- INTRODUCTION -->
+<h1>Introduction</h1>
+<p>En génie logiciel, la modélisation des besoins fonctionnels constitue une étape cruciale dans le cycle de développement d'un système. Le langage UML (Unified Modeling Language) propose pour cela le diagramme de cas d'utilisation, qui offre une vue synthétique des interactions entre les acteurs et le système.</p>
+<p>Cependant, ce diagramme reste volontairement abstrait et visuel. Il montre <em>quoi</em> mais pas <em>comment</em>. Pour pallier cette limite, on recourt à la <strong>description textuelle des cas d'utilisation</strong>, une représentation complémentaire qui détaille de manière narrative et structurée le déroulement de chaque cas d'utilisation.</p>
+<p>Cette description constitue un outil de communication essentiel entre les analystes, les développeurs et les parties prenantes du projet. Elle permet de valider la compréhension des besoins et sert de référence tout au long du développement.</p>
+<p>Dans cet exposé, nous définirons d'abord ce qu'est une description textuelle et ses objectifs. Nous présenterons ensuite sa structure type, les différents scénarios qu'elle contient, puis nous illustrerons notre propos par plusieurs exemples concrets. Enfin, nous aborderons les bonnes pratiques à suivre pour rédiger des descriptions de qualité.</p>
+
+<div class="page-break"></div>
+
+<!-- PARTIE I -->
+<h1>I. Définition et Objectifs</h1>
+<h2>1.1 Définition</h2>
+<p>La description textuelle d'un cas d'utilisation est une représentation structurée (sous forme de fiche, tableau ou document) qui décrit de manière détaillée le déroulement des interactions entre un acteur et le système pour atteindre un objectif précis. Elle complète le diagramme de cas d'utilisation en apportant le niveau de détail nécessaire à la compréhension et à l'implémentation.</p>
+<p>Contrairement au diagramme qui offre une vue d'ensemble graphique, la description textuelle adopte une approche narrative, étape par étape, qui explicite le dialogue entre l'utilisateur et le système.</p>
+<div class="image-placeholder"><strong>[Image 1]</strong> — Schéma montrant la complémentarité entre le diagramme de cas d'utilisation (vue globale) et la description textuelle (vue détaillée).</div>
+
+<h2>1.2 Objectifs</h2>
+<p><strong>Documenter les besoins fonctionnels :</strong> Elle formalise de manière précise ce que le système doit faire, sans ambiguïté. Chaque fonctionnalité est décrite avec ses conditions de déclenchement, son déroulement et ses résultats attendus.</p>
+<p><strong>Faciliter la communication :</strong> Elle sert de support d'échange entre les différentes parties prenantes du projet. Les analystes, développeurs, testeurs et clients peuvent s'y référer pour partager une compréhension commune.</p>
+<p><strong>Valider les exigences :</strong> En présentant la description au client ou aux utilisateurs finaux, on peut vérifier que l'équipe de développement a bien compris les besoins exprimés.</p>
+<p><strong>Guider le développement :</strong> Les développeurs s'appuient sur ces descriptions pour implémenter les fonctionnalités. Elles servent également de base pour la conception des tests.</p>
+<p><strong>Assurer la traçabilité :</strong> Chaque cas d'utilisation peut être relié aux exigences initiales du cahier des charges, permettant de vérifier que tous les besoins sont couverts.</p>
+<div class="image-placeholder"><strong>[Image 2]</strong> — Diagramme illustrant les différents acteurs du projet reliés à la description textuelle au centre.</div>
+
+<div class="page-break"></div>
+
+<!-- PARTIE II -->
+<h1>II. Structure d'une Fiche de Description</h1>
+<p class="no-indent">Une fiche de description textuelle suit généralement un format standardisé comprenant plusieurs rubriques.</p>
+
+<h2>2.1 Identification du cas d'utilisation</h2>
+<p><strong>Nom du cas d'utilisation :</strong> Un intitulé clair, généralement formulé avec un verbe à l'infinitif (ex : « Retirer de l'argent »).</p>
+<p><strong>Identifiant :</strong> Un code unique permettant de référencer le cas d'utilisation (ex : UC-001).</p>
+<p><strong>Version et date :</strong> Pour assurer le suivi des modifications.</p>
+<p><strong>Auteur :</strong> La personne responsable de la rédaction.</p>
+
+<h2>2.2 Description générale</h2>
+<p><strong>Résumé :</strong> Une brève description en une ou deux phrases de l'objectif du cas d'utilisation.</p>
+<p><strong>Acteur principal :</strong> L'acteur qui initie le cas d'utilisation et en tire le bénéfice principal.</p>
+<p><strong>Acteurs secondaires :</strong> Les autres acteurs ou systèmes externes impliqués.</p>
+
+<h2>2.3 Conditions</h2>
+<p><strong>Préconditions :</strong> Les conditions qui doivent être vraies avant le déclenchement du cas d'utilisation.</p>
+<p><strong>Postconditions :</strong> L'état du système après l'exécution réussie.</p>
+<p><strong>Déclencheur :</strong> L'événement qui provoque le lancement du cas d'utilisation.</p>
+
+<h2>2.4 Scénarios</h2>
+<p><strong>Scénario nominal :</strong> La séquence d'étapes qui se déroule dans le cas normal.</p>
+<p><strong>Scénarios alternatifs :</strong> Les variantes possibles du déroulement normal.</p>
+<p><strong>Scénarios d'exception :</strong> Les cas d'erreur et la manière dont le système les gère.</p>
+
+<h2>2.5 Informations complémentaires</h2>
+<p><strong>Règles de gestion :</strong> Les contraintes métier applicables.</p>
+<p><strong>Besoins spéciaux :</strong> Exigences non fonctionnelles (performance, sécurité).</p>
+<p><strong>Fréquence d'utilisation :</strong> Estimation de la fréquence d'exécution.</p>
+<div class="image-placeholder"><strong>[Image 3]</strong> — Template visuel d'une fiche de description vierge.</div>
+
+<div class="page-break"></div>
+
+<!-- PARTIE III -->
+<h1>III. Les Scénarios</h1>
+<p class="no-indent">Les scénarios constituent le cœur de la description textuelle. Ils décrivent le dialogue entre l'acteur et le système sous forme d'une séquence d'étapes numérotées.</p>
+
+<h2>3.1 Le scénario nominal</h2>
+<p>Le scénario nominal représente le déroulement idéal du cas d'utilisation, celui où tout se passe comme prévu. Il décrit le chemin « ensoleillé » (<em>happy path</em>) menant à la satisfaction de l'objectif de l'acteur.</p>
+<p><strong>Caractéristiques :</strong> Il commence par une action de l'acteur principal, alterne entre actions de l'acteur et réponses du système, et se termine par l'atteinte de l'objectif sans erreur.</p>
+<p><strong>Conventions :</strong> Chaque étape est numérotée, rédigée au présent, avec une seule action par étape en précisant qui agit.</p>
+<div class="image-placeholder"><strong>[Image 4]</strong> — Représentation du scénario nominal comme un chemin droit (flèches vertes).</div>
+
+<h2>3.2 Les scénarios alternatifs</h2>
+<p>Les scénarios alternatifs décrivent des variantes valides du scénario nominal. Ce sont des chemins différents mais tout aussi acceptables pour atteindre l'objectif.</p>
+<p><strong>Notation :</strong> On les numérote en référence à l'étape où ils divergent (ex : 3a, 3b pour des alternatives à l'étape 3).</p>
+<div class="image-placeholder"><strong>[Image 5]</strong> — Représentation des scénarios alternatifs comme des embranchements (flèches bleues).</div>
+
+<h2>3.3 Les scénarios d'exception</h2>
+<p>Les scénarios d'exception gèrent les situations d'erreur ou les cas où l'objectif ne peut pas être atteint. Ils décrivent comment le système réagit face aux problèmes.</p>
+<p><strong>Notation :</strong> On utilise souvent un préfixe « E » (ex : E1, E2).</p>
+<p><strong>Exemples :</strong> Données invalides, ressource indisponible, droits insuffisants, timeout.</p>
+<div class="image-placeholder"><strong>[Image 6]</strong> — Représentation des scénarios d'exception (flèches rouges avec panneaux d'avertissement).</div>
+
+<div class="page-break"></div>
+
+<!-- PARTIE IV - EXEMPLES -->
+<h1>IV. Exemples Pratiques</h1>
+
+<!-- EXEMPLE 1 : DAB -->
+<div class="example-header">Exemple 1 : Distributeur Automatique de Billets (DAB)</div>
+<div class="example-subheader">Cas d'utilisation : Retirer de l'argent</div>
+<table>
+  <tr><th style="width:30%">Rubrique</th><th>Description</th></tr>
+  <tr><td><strong>Identifiant</strong></td><td>UC-DAB-001</td></tr>
+  <tr><td><strong>Nom</strong></td><td>Retirer de l'argent</td></tr>
+  <tr><td><strong>Acteur principal</strong></td><td>Client bancaire</td></tr>
+  <tr><td><strong>Acteurs secondaires</strong></td><td>Système d'information de la banque</td></tr>
+  <tr><td><strong>Résumé</strong></td><td>Permet à un client de retirer des espèces depuis son compte via le DAB</td></tr>
+  <tr><td><strong>Préconditions</strong></td><td>Le DAB est opérationnel et approvisionné</td></tr>
+  <tr><td><strong>Déclencheur</strong></td><td>Le client insère sa carte bancaire</td></tr>
+  <tr><td><strong>Postconditions (succès)</strong></td><td>Le client a reçu les billets, son compte est débité</td></tr>
+</table>
+<h3>Scénario nominal :</h3>
+<table class="scenario-table">
+  <tr><th>Étape</th><th>Acteur</th><th>Action</th></tr>
+  <tr><td>1</td><td>Client</td><td>Insère sa carte bancaire dans le DAB</td></tr>
+  <tr><td>2</td><td>Système</td><td>Lit la carte et demande le code PIN</td></tr>
+  <tr><td>3</td><td>Client</td><td>Saisit son code PIN à 4 chiffres</td></tr>
+  <tr><td>4</td><td>Système</td><td>Vérifie le code PIN auprès du SI bancaire</td></tr>
+  <tr><td>5</td><td>Système</td><td>Affiche le menu des opérations disponibles</td></tr>
+  <tr><td>6</td><td>Client</td><td>Sélectionne « Retrait d'espèces »</td></tr>
+  <tr><td>7</td><td>Système</td><td>Propose les montants prédéfinis et l'option montant libre</td></tr>
+  <tr><td>8</td><td>Client</td><td>Choisit un montant (ex : 50 000 FCFA)</td></tr>
+  <tr><td>9</td><td>Système</td><td>Vérifie le solde et le plafond de retrait</td></tr>
+  <tr><td>10</td><td>Système</td><td>Débite le compte et distribue les billets</td></tr>
+  <tr><td>11</td><td>Système</td><td>Éjecte la carte et affiche un message de fin</td></tr>
+  <tr><td>12</td><td>Client</td><td>Récupère sa carte et ses billets</td></tr>
+</table>
+<div class="alt-scenario">
+  <div class="scenario-title">Scénarios alternatifs :</div>
+  <p><strong>8a. Le client choisit un montant libre :</strong> Le système affiche un écran de saisie → Le client saisit le montant → Retour à l'étape 9</p>
+</div>
+<div class="exc-scenario">
+  <div class="scenario-title">Scénarios d'exception :</div>
+  <p><strong>E1. Code PIN incorrect :</strong> Le système affiche une erreur et demande de ressaisir (3 tentatives max). Après 3 échecs, la carte est avalée.</p>
+  <p><strong>E2. Solde insuffisant :</strong> Le système affiche « Solde insuffisant » et propose un autre montant.</p>
+</div>
+
+<!-- EXEMPLE 2 : HOTEL -->
+<div class="example-header">Exemple 2 : Système de Réservation d'Hôtel</div>
+<div class="example-subheader">Cas d'utilisation : Réserver une chambre</div>
+<table>
+  <tr><th style="width:30%">Rubrique</th><th>Description</th></tr>
+  <tr><td><strong>Identifiant</strong></td><td>UC-HOT-001</td></tr>
+  <tr><td><strong>Nom</strong></td><td>Réserver une chambre</td></tr>
+  <tr><td><strong>Acteur principal</strong></td><td>Client</td></tr>
+  <tr><td><strong>Acteurs secondaires</strong></td><td>Système de paiement en ligne</td></tr>
+  <tr><td><strong>Résumé</strong></td><td>Permet à un client de rechercher et réserver une chambre d'hôtel en ligne</td></tr>
+  <tr><td><strong>Préconditions</strong></td><td>Le client est connecté à son compte</td></tr>
+  <tr><td><strong>Postconditions (succès)</strong></td><td>La réservation est confirmée, la chambre bloquée</td></tr>
+</table>
+<h3>Scénario nominal :</h3>
+<table class="scenario-table">
+  <tr><th>Étape</th><th>Acteur</th><th>Action</th></tr>
+  <tr><td>1</td><td>Client</td><td>Accède à la page de recherche</td></tr>
+  <tr><td>2</td><td>Client</td><td>Saisit les critères (destination, dates, personnes)</td></tr>
+  <tr><td>3</td><td>Système</td><td>Recherche les chambres disponibles</td></tr>
+  <tr><td>4</td><td>Système</td><td>Affiche la liste des chambres avec tarifs</td></tr>
+  <tr><td>5</td><td>Client</td><td>Sélectionne une chambre et clique sur « Réserver »</td></tr>
+  <tr><td>6</td><td>Système</td><td>Affiche le récapitulatif et demande confirmation</td></tr>
+  <tr><td>7</td><td>Client</td><td>Saisit les informations de paiement</td></tr>
+  <tr><td>8</td><td>Système</td><td>Traite le paiement et confirme la réservation</td></tr>
+  <tr><td>9</td><td>Système</td><td>Envoie un email de confirmation</td></tr>
+</table>
+<div class="exc-scenario">
+  <div class="scenario-title">Scénarios d'exception :</div>
+  <p><strong>E1. Aucune chambre disponible :</strong> Le système affiche « Aucune disponibilité » et suggère des dates alternatives.</p>
+  <p><strong>E2. Échec du paiement :</strong> Le système propose de réessayer ou changer de moyen de paiement.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- EXEMPLE 3 : E-COMMERCE -->
+<div class="example-header">Exemple 3 : Plateforme E-commerce</div>
+<div class="example-subheader">Cas d'utilisation : Passer une commande</div>
+<table>
+  <tr><th style="width:30%">Rubrique</th><th>Description</th></tr>
+  <tr><td><strong>Identifiant</strong></td><td>UC-ECO-001</td></tr>
+  <tr><td><strong>Nom</strong></td><td>Passer une commande</td></tr>
+  <tr><td><strong>Acteur principal</strong></td><td>Client</td></tr>
+  <tr><td><strong>Acteurs secondaires</strong></td><td>Système de paiement, Service de livraison</td></tr>
+  <tr><td><strong>Résumé</strong></td><td>Permet à un client de finaliser l'achat des articles de son panier</td></tr>
+  <tr><td><strong>Préconditions</strong></td><td>Le panier contient au moins un article</td></tr>
+  <tr><td><strong>Postconditions (succès)</strong></td><td>Commande enregistrée, paiement effectué, livraison planifiée</td></tr>
+</table>
+<h3>Scénario nominal :</h3>
+<table class="scenario-table">
+  <tr><th>Étape</th><th>Acteur</th><th>Action</th></tr>
+  <tr><td>1</td><td>Client</td><td>Clique sur « Valider mon panier »</td></tr>
+  <tr><td>2</td><td>Système</td><td>Affiche le récapitulatif et vérifie le stock</td></tr>
+  <tr><td>3</td><td>Client</td><td>Sélectionne l'adresse de livraison</td></tr>
+  <tr><td>4</td><td>Système</td><td>Propose les modes de livraison avec tarifs</td></tr>
+  <tr><td>5</td><td>Client</td><td>Choisit un mode de livraison</td></tr>
+  <tr><td>6</td><td>Système</td><td>Calcule le total et affiche les moyens de paiement</td></tr>
+  <tr><td>7</td><td>Client</td><td>Sélectionne un moyen de paiement et paie</td></tr>
+  <tr><td>8</td><td>Système</td><td>Enregistre la commande et envoie la confirmation</td></tr>
+</table>
+<div class="alt-scenario">
+  <div class="scenario-title">Scénarios alternatifs :</div>
+  <p><strong>7a. Paiement mobile (Orange Money) :</strong> Le système redirige vers le service → Le client confirme → Retour à l'étape 8</p>
+</div>
+<div class="exc-scenario">
+  <div class="scenario-title">Scénarios d'exception :</div>
+  <p><strong>E1. Article épuisé :</strong> Le système signale l'indisponibilité et propose des alternatives.</p>
+</div>
+
+<!-- EXEMPLE 4 : BIBLIOTHEQUE -->
+<div class="example-header">Exemple 4 : Système de Gestion de Bibliothèque</div>
+<div class="example-subheader">Cas d'utilisation : Emprunter un livre</div>
+<table>
+  <tr><th style="width:30%">Rubrique</th><th>Description</th></tr>
+  <tr><td><strong>Identifiant</strong></td><td>UC-BIB-001</td></tr>
+  <tr><td><strong>Nom</strong></td><td>Emprunter un livre</td></tr>
+  <tr><td><strong>Acteur principal</strong></td><td>Adhérent</td></tr>
+  <tr><td><strong>Acteurs secondaires</strong></td><td>Bibliothécaire (optionnel)</td></tr>
+  <tr><td><strong>Résumé</strong></td><td>Permet à un adhérent d'emprunter un ou plusieurs livres</td></tr>
+  <tr><td><strong>Préconditions</strong></td><td>L'adhérent possède une carte valide et n'a pas atteint son quota</td></tr>
+  <tr><td><strong>Postconditions (succès)</strong></td><td>Les livres sont enregistrés comme empruntés</td></tr>
+</table>
+<h3>Scénario nominal :</h3>
+<table class="scenario-table">
+  <tr><th>Étape</th><th>Acteur</th><th>Action</th></tr>
+  <tr><td>1</td><td>Adhérent</td><td>Présente sa carte à la borne</td></tr>
+  <tr><td>2</td><td>Système</td><td>Identifie l'adhérent et vérifie son adhésion</td></tr>
+  <tr><td>3</td><td>Système</td><td>Affiche le quota disponible</td></tr>
+  <tr><td>4</td><td>Adhérent</td><td>Scanne le code-barres du livre</td></tr>
+  <tr><td>5</td><td>Système</td><td>Enregistre l'emprunt et calcule la date de retour</td></tr>
+  <tr><td>6</td><td>Adhérent</td><td>Valide et récupère le ticket</td></tr>
+</table>
+<div class="exc-scenario">
+  <div class="scenario-title">Scénarios d'exception :</div>
+  <p><strong>E1. Adhésion expirée :</strong> Le système affiche « Adhésion expirée » et propose le renouvellement.</p>
+  <p><strong>E2. Quota atteint :</strong> Le système refuse l'emprunt et affiche les emprunts en cours.</p>
+</div>
+
+<!-- EXEMPLE 5 : SCOLARITE -->
+<div class="example-header">Exemple 5 : Système de Gestion de Scolarité</div>
+<div class="example-subheader">Cas d'utilisation : S'inscrire à une année universitaire</div>
+<table>
+  <tr><th style="width:30%">Rubrique</th><th>Description</th></tr>
+  <tr><td><strong>Identifiant</strong></td><td>UC-SCO-001</td></tr>
+  <tr><td><strong>Nom</strong></td><td>S'inscrire à une année universitaire</td></tr>
+  <tr><td><strong>Acteur principal</strong></td><td>Étudiant</td></tr>
+  <tr><td><strong>Acteurs secondaires</strong></td><td>Service de scolarité, Service financier</td></tr>
+  <tr><td><strong>Résumé</strong></td><td>Permet à un étudiant d'effectuer son inscription administrative</td></tr>
+  <tr><td><strong>Préconditions</strong></td><td>L'étudiant est admis ou autorisé à se réinscrire</td></tr>
+  <tr><td><strong>Postconditions (succès)</strong></td><td>L'inscription est validée, la carte d'étudiant peut être éditée</td></tr>
+</table>
+<h3>Scénario nominal :</h3>
+<table class="scenario-table">
+  <tr><th>Étape</th><th>Acteur</th><th>Action</th></tr>
+  <tr><td>1</td><td>Étudiant</td><td>Se connecte au portail d'inscription</td></tr>
+  <tr><td>2</td><td>Système</td><td>Vérifie l'identité et les droits d'inscription</td></tr>
+  <tr><td>3</td><td>Système</td><td>Affiche le formulaire pré-rempli</td></tr>
+  <tr><td>4</td><td>Étudiant</td><td>Vérifie et met à jour ses informations</td></tr>
+  <tr><td>5</td><td>Étudiant</td><td>Téléverse les pièces justificatives</td></tr>
+  <tr><td>6</td><td>Système</td><td>Vérifie la complétude et calcule les frais</td></tr>
+  <tr><td>7</td><td>Étudiant</td><td>Choisit le mode de paiement et paie</td></tr>
+  <tr><td>8</td><td>Système</td><td>Valide l'inscription et génère le certificat</td></tr>
+  <tr><td>9</td><td>Étudiant</td><td>Télécharge son certificat de scolarité</td></tr>
+</table>
+<div class="alt-scenario">
+  <div class="scenario-title">Scénarios alternatifs :</div>
+  <p><strong>7a. Étudiant boursier :</strong> Le système vérifie le statut et applique l'exonération partielle ou totale.</p>
+  <p><strong>7b. Paiement échelonné :</strong> Le système génère un échéancier → L'étudiant paie la première tranche.</p>
+</div>
+<div class="exc-scenario">
+  <div class="scenario-title">Scénarios d'exception :</div>
+  <p><strong>E1. Dossier incomplet :</strong> Le système liste les documents manquants, l'inscription reste en attente.</p>
+  <p><strong>E2. Étudiant non autorisé :</strong> Le système affiche le motif du blocage et invite à contacter la scolarité.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- PARTIE V -->
+<h1>V. Bonnes Pratiques et Conseils</h1>
+
+<h2>5.1 Règles de rédaction</h2>
+<p><strong>Utiliser un vocabulaire cohérent et précis.</strong> Chaque terme métier doit être défini dans un glossaire et utilisé de manière uniforme. Par exemple, si l'on parle de « client » dans un cas d'utilisation, on ne doit pas utiliser « utilisateur » pour désigner la même entité dans un autre.</p>
+<p><strong>Numéroter systématiquement les étapes.</strong> La numérotation facilite les références, notamment pour les scénarios alternatifs et d'exception qui renvoient à des étapes précises.</p>
+<p><strong>Rédiger au présent de l'indicatif et à la voix active.</strong> On écrit « Le système affiche le message » plutôt que « Le message sera affiché par le système ».</p>
+<p><strong>Une seule action par étape.</strong> Chaque étape doit décrire une action atomique. « Le client saisit son identifiant et son mot de passe puis clique sur connexion » devrait être divisé en trois étapes.</p>
+<p><strong>Identifier clairement l'auteur de chaque action.</strong> Chaque étape doit préciser qui agit : l'acteur ou le système.</p>
+
+<h2>5.2 Niveau de détail</h2>
+<p><strong>Adapter la granularité au contexte.</strong> Le niveau de détail dépend de la complexité du cas d'utilisation et des besoins des lecteurs. Une description destinée aux développeurs sera plus précise qu'une description pour validation client.</p>
+<p><strong>Rester au niveau métier.</strong> La description ne doit pas anticiper les choix techniques. On écrit « Le système enregistre les informations » et non « Le système exécute une requête INSERT dans la table Clients ».</p>
+<p><strong>Se concentrer sur le "quoi" et non le "comment".</strong> La description exprime ce que le système doit faire, pas comment il le fait techniquement.</p>
+
+<h2>5.3 Gestion des relations entre cas d'utilisation</h2>
+<p><strong>Décrire les inclusions (≪include≫).</strong> Indiquer clairement à quelle étape l'inclusion se produit : « Le système exécute le cas d'utilisation "S'authentifier" (UC-AUT-001) ».</p>
+<p><strong>Décrire les extensions (≪extend≫).</strong> Préciser la condition de déclenchement et le point d'extension.</p>
+<p><strong>Maintenir des références croisées.</strong> Chaque fiche doit mentionner les cas d'utilisation liés pour faciliter la navigation.</p>
+<p><strong>Éviter la redondance.</strong> Factoriser les comportements communs dans des cas d'utilisation inclus.</p>
+
+<h2>5.4 Validation et qualité</h2>
+<p><strong>Impliquer les parties prenantes.</strong> La description doit être relue et validée par les utilisateurs métier et le client.</p>
+<p><strong>Vérifier la cohérence avec le diagramme.</strong> Tout cas d'utilisation présent dans le diagramme doit avoir sa description, et inversement.</p>
+<p><strong>Assurer la traçabilité.</strong> Chaque cas d'utilisation doit pouvoir être relié aux exigences fonctionnelles du cahier des charges.</p>
+<p><strong>Tester les scénarios.</strong> Dérouler mentalement chaque scénario pour vérifier qu'il est complet et cohérent.</p>
+
+<h2>5.5 Erreurs fréquentes à éviter</h2>
+<p><strong>Décrire l'interface utilisateur plutôt que l'interaction.</strong> Ne pas spécifier les éléments d'interface (« Le client clique sur le bouton vert en haut à droite »).</p>
+<p><strong>Mélanger plusieurs cas d'utilisation.</strong> Chaque fiche doit correspondre à un seul objectif utilisateur.</p>
+<p><strong>Oublier les cas d'erreur.</strong> Les scénarios d'exception sont souvent négligés alors qu'ils représentent une part importante du comportement réel.</p>
+<p><strong>Négliger les préconditions et postconditions.</strong> Ces éléments sont essentiels pour délimiter le périmètre du cas d'utilisation.</p>
+<p><strong>Rédiger des scénarios trop longs.</strong> Un scénario de plus de 15-20 étapes devient difficile à suivre. Il faut envisager de décomposer.</p>
+
+<div class="image-placeholder"><strong>[Image 12]</strong> — Tableau comparatif « À faire / À éviter » avec des exemples de bonnes et mauvaises pratiques.</div>
+
+<div class="page-break"></div>
+
+<!-- CONCLUSION -->
+<h1>Conclusion</h1>
+<p>La description textuelle des cas d'utilisation constitue un outil indispensable dans la boîte à outils de l'analyste et du concepteur de systèmes d'information. En complétant le diagramme de cas d'utilisation, elle apporte le niveau de détail nécessaire pour passer de la vision globale à la compréhension fine des interactions entre les acteurs et le système.</p>
+<p>À travers cet exposé, nous avons vu que la description textuelle suit une structure rigoureuse comprenant l'identification du cas, les acteurs impliqués, les conditions d'exécution et surtout les scénarios qui détaillent le déroulement pas à pas. La distinction entre scénario nominal, scénarios alternatifs et scénarios d'exception permet de couvrir l'ensemble des situations possibles.</p>
+<p>Les cinq exemples présentés, issus de domaines variés (bancaire, hôtelier, e-commerce, bibliothèque et universitaire), illustrent la versatilité de cet outil qui s'adapte à tout type de système. Quelle que soit la complexité du projet, la méthode reste la même.</p>
+<p>Enfin, le respect des bonnes pratiques de rédaction garantit la qualité et l'utilité des descriptions produites. Un vocabulaire précis, un niveau de détail approprié, une validation par les parties prenantes et une maintenance régulière sont les clés d'une documentation efficace.</p>
+<p>La description textuelle s'articule avec d'autres diagrammes UML pour offrir une vue complète du système. Le diagramme de séquence peut être dérivé directement du scénario nominal, tandis que le diagramme d'activité peut illustrer les flux avec leurs branchements. Cette complémentarité fait la force de la modélisation UML.</p>
+<p>En maîtrisant la description textuelle des cas d'utilisation, le futur ingénieur ou chef de projet dispose d'un moyen efficace pour capturer, communiquer et valider les besoins fonctionnels, première étape vers la réussite de tout projet de développement logiciel.</p>
+
+<!-- BIBLIOGRAPHIE -->
+<h1>Bibliographie / Webographie</h1>
+<p class="biblio-item no-indent">JACOBSON, Ivar, BOOCH, Grady, RUMBAUGH, James. <em>The Unified Modeling Language User Guide</em>. Addison-Wesley, 2005.</p>
+<p class="biblio-item no-indent">COCKBURN, Alistair. <em>Writing Effective Use Cases</em>. Addison-Wesley, 2001.</p>
+<p class="biblio-item no-indent">LARMAN, Craig. <em>UML 2 et les Design Patterns</em>. Pearson Education, 2005.</p>
+<p class="biblio-item no-indent">OMG (Object Management Group). <em>UML 2.5.1 Specification</em>. https://www.omg.org/spec/UML/</p>
+<p class="biblio-item no-indent">Sparx Systems. <em>Enterprise Architect User Guide - Use Cases</em>. https://sparxsystems.com/</p>
+
+</body>
+</html>
